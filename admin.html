@@ -113,6 +113,125 @@
         .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
         input:checked + .slider { background-color: var(--primary-teal); }
         input:checked + .slider:before { transform: translateX(18px); }
+        /* --- MOBILE RESPONSIVENESS (Screens 850px and below) --- */
+        @media (max-width: 850px) {
+            .navbar {
+                padding: 1rem 4%;
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .navbar div {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                width: 100%;
+                gap: 8px;
+            }
+
+            .navbar button {
+                font-size: 0.7rem;
+                padding: 8px 5px !important;
+                justify-content: center;
+            }
+
+            .container {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+
+            .page-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .header-actions {
+                width: 100%;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .header-actions button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr; /* 2x2 grid on mobile */
+                gap: 12px;
+            }
+
+            .stat-card {
+                padding: 15px;
+            }
+
+            .stat-value {
+                font-size: 1.2rem;
+            }
+
+            .management-strip {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 15px;
+            }
+
+            .management-strip div {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            /* --- RESPONSIVE TABLE --- */
+            /* Force table to be scrollable horizontally on small screens */
+            .admin-card {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            table {
+                min-width: 700px; /* Ensures table data doesn't squash */
+            }
+
+            td, th {
+                padding: 12px 15px;
+            }
+
+            /* --- MODALS ON MOBILE --- */
+            .modal-content {
+                padding: 20px !important;
+                width: 95% !important;
+                height: auto !important;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            #addUserForm div {
+                grid-template-columns: 1fr !important; /* Stack form fields 1-column */
+            }
+
+            #supportInboxModal .modal-content div {
+                grid-template-columns: 1fr !important; /* Stack ticket list and detail */
+            }
+
+            #ticketList {
+                border-right: none !important;
+                border-bottom: 1px solid #E2E8F0;
+                margin-bottom: 15px;
+                max-height: 200px;
+            }
+        }
+
+        /* Very Small Devices (Phones) */
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr; /* 1 column on very small phones */
+            }
+
+            .header-left h1 {
+                font-size: 1.6rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -479,3 +598,4 @@
 </body>
 
 </html>
+

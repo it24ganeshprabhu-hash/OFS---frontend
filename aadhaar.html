@@ -131,7 +131,7 @@
                 btn.innerText = "Connecting...";
 
                 // We use URLSearchParams to ensure @RequestParam in Java gets the data correctly
-                const response = await fetch(`${API_URL}/start?aadhaarNumber=${savedAadhaar}`, {
+                const response = await fetch(`${API_URL}/aadhaar/start?aadhaarNumber=${savedAadhaar}`, {
                     method: 'POST'
                 });
 
@@ -163,7 +163,7 @@
                 btn.disabled = true;
                 btn.innerText = "Verifying...";
 
-                const response = await fetch(`${API_URL}/verifyOtp?aadhaarNumber=${savedAadhaar}&otp=${fullOtp}`, {
+                const response = await fetch(`${API_URL}/aadhaar/verifyOtp?aadhaarNumber=${savedAadhaar}&otp=${fullOtp}`, {
                     method: 'POST'
                 });
 
